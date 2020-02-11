@@ -58,3 +58,23 @@ window.addEventListener("load", () => {
     content.style.opacity = "0.1";
 });
 
+// Alert user if window is resized :)
+window.addEventListener("resize", () => {
+    alert("Resize all you want! This site is responsive!");
+});
+
+// Alert if any key is pressed
+window.addEventListener("keydown", () => {
+    alert("You pressed a key!");
+});
+
+// Alert user if the context menu is opened
+window.addEventListener("contextmenu", () => {
+    alert("You're opening the context menu!");
+});
+
+
+
+
+
+
