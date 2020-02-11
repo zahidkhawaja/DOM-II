@@ -1,10 +1,60 @@
-const busHover = document.querySelector(".intro img");
+const bus = document.querySelector(".intro img");
 
-busHover.addEventListener("mouseenter", () => {
-    busHover.style.filter = "brightness(95%)";
+// Adjust bus image brightness upon hovering
+bus.addEventListener("mouseenter", () => {
+    bus.style.filter = "brightness(95%)";
 });
 
-busHover.addEventListener("mouseleave", () => {
-    busHover.style.filter = "brightness(100%)";
+bus.addEventListener("mouseleave", () => {
+    bus.style.filter = "brightness(100%)";
+});
+
+// Decrease bus image size after double clicking
+bus.addEventListener("dblclick", () => {
+    bus.style.transform = "scale(0.85)";
+})
+
+const logo = document.querySelector(".logo-heading");
+
+// Make logo purple and increase font weight when clicked
+logo.addEventListener("click", () => {
+    logo.style.color = "purple";
+    logo.style.fontWeight = "800";
+});
+
+// Underline all paragraph text as you mouse over it 
+document.querySelectorAll("p").forEach(p => {
+    p.addEventListener("mouseenter", () => {
+    p.style.textDecoration = "underline"
+})});
+
+// Show an alert if any is copied
+document.querySelectorAll("p").forEach(text => {
+    text.addEventListener("copy", () => {
+    alert("Please don't copy text!");
+})});
+
+const intro = document.querySelector(".intro");
+
+// Top section has low opacity initially
+intro.style.opacity = "0.1";
+
+// Upon page loading, the top section's opacity increases to 1 and there's a 2 second transition
+window.addEventListener("load", () => {
+    intro.style.opacity = "1";
+    intro.style.setProperty("transition", "opacity 2s ease-in");
+})
+
+const content = document.querySelector(".content-section");
+
+// Upon scrolling, the second section ("Let's Go!") fades in using the same opacity/transition properties
+window.addEventListener("scroll", () => {
+    content.style.opacity = "1";
+    content.style.setProperty("transition", "opacity 2s ease-in");
+});
+
+// The second section initially loads with a low opacity (faded)
+window.addEventListener("load", () => {
+    content.style.opacity = "0.1";
 });
 
