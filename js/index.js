@@ -12,7 +12,8 @@ bus.addEventListener("mouseleave", () => {
 // Decrease bus image size after double clicking
 bus.addEventListener("dblclick", () => {
     bus.style.transform = "scale(0.85)";
-})
+    bus.style.backgroundColor = "black";
+});
 
 const logo = document.querySelector(".logo-heading");
 
@@ -20,12 +21,13 @@ const logo = document.querySelector(".logo-heading");
 logo.addEventListener("click", () => {
     logo.style.color = "purple";
     logo.style.fontWeight = "800";
+    logo.style.backgroundColor = "yellow";
 });
 
 // Underline all paragraph text as you mouse over it 
 document.querySelectorAll("p").forEach(p => {
     p.addEventListener("mouseenter", () => {
-    p.style.textDecoration = "underline"
+    p.style.textDecoration = "underline";
 })});
 
 // Show an alert if any is copied
@@ -34,7 +36,12 @@ document.querySelectorAll("p").forEach(text => {
     alert("Please don't copy text!");
 })});
 
-const intro = document.querySelector(".intro");
+const intro = document.querySelector("body .intro");
+
+// Give intro section a background if double clicked
+document.addEventListener("dblclick", () => {
+    intro.style.backgroundColor = "orange";
+})
 
 // Top section has low opacity initially
 intro.style.opacity = "0.1";
@@ -71,6 +78,25 @@ window.addEventListener("keydown", () => {
 // Alert user if the context menu is opened
 window.addEventListener("contextmenu", () => {
     alert("You're opening the context menu!");
+});
+
+const testing = document.querySelector("body");
+
+document.addEventListener("click", () => {
+    testing.style.backgroundColor = "ghostwhite";
+});
+
+const footer = document.querySelector("footer");
+
+document.addEventListener("click", () => {
+    footer.style.backgroundColor = "orange";
+    footer.preventPropagation();
+});
+
+const stopLink = document.querySelector(".nav");
+
+stopLink.addEventListener("click", (event) => {
+  event.preventDefault();
 });
 
 
