@@ -90,7 +90,7 @@ const footer = document.querySelector("footer");
 
 document.addEventListener("click", () => {
     footer.style.backgroundColor = "orange";
-    footer.preventPropagation();
+    footer.stopPropagation();
 });
 
 const stopLink = document.querySelector(".nav");
